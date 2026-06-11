@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Silas Motshegoa — Software Developer & Aspiring Software Engineer. IT Graduate specialising in Java, JavaScript, web technologies, and databases." />
+  <meta name="keywords" content="Silas Motshegoa, Software Developer, Web Developer, Java, JavaScript, South Africa" />
+  <meta property="og:title" content="Silas Motshegoa | Software Developer" />
+  <meta property="og:description" content="IT Graduate passionate about building practical solutions that create real-world impact." />
+  <meta property="og:type" content="website" />
+  <title>Silas Motshegoa | Software Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== LOADING SCREEN ===================== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">SM</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <span class="loader-text">Initialising...</span>
+    </div>
+  </div>
+
+  <!-- ===================== SCROLL PROGRESS ===================== -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="#home" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#about"    role="menuitem" class="nav-link">About</a></li>
+        <li role="none"><a href="#skills"   role="menuitem" class="nav-link">Skills</a></li>
+        <li role="none"><a href="#projects" role="menuitem" class="nav-link">Projects</a></li>
+        <li role="none"><a href="#timeline" role="menuitem" class="nav-link">Journey</a></li>
+        <li role="none"><a href="#certs"    role="menuitem" class="nav-link">Certs</a></li>
+        <li role="none"><a href="#contact"  role="menuitem" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Dark / Light toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle colour theme">
+          <i class="fa-solid fa-sun"  id="icon-light" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon" id="icon-dark"  aria-hidden="true"></i>
+        </button>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home" aria-label="Hero">
+    <!-- Particle canvas -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Decorative grid lines -->
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <div class="hero-left">
+        <!-- Tag line -->
+        <p class="hero-tag" data-reveal>
+          <span class="tag-dot" aria-hidden="true"></span>
+          Available for opportunities
+        </p>
+
+        <h1 class="hero-name" data-reveal>
+          Silas<br /><span class="name-accent">Motshegoa</span>
+        </h1>
+
+        <!-- Typing effect -->
+        <div class="hero-typed" data-reveal aria-live="polite">
+          <span class="typed-prefix">_&nbsp;</span>
+          <span id="typed-text" class="typed-text"></span>
+          <span class="typed-cursor" aria-hidden="true">|</span>
+        </div>
+
+        <p class="hero-bio" data-reveal>
+          IT Graduate passionate about <strong>software development</strong>,
+          web technologies, databases, and problem-solving — building practical
+          solutions that create real-world impact.
+        </p>
+
+        <div class="hero-cta" data-reveal>
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+            View Projects
+          </a>
+          <a href="Silas_Motshegoa_CV.pdf" download class="btn btn-outline">
+            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+            Download CV
+          </a>
+        </div>
+
+        <!-- Stat counters -->
+        <div class="hero-stats" data-reveal>
+          <div class="stat">
+            <span class="stat-num" data-count="4">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="10">0</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat">
+            <span class="stat-num" data-count="3">0</span>
+            <span class="stat-label">Years Studying</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" data-reveal>
+        <!-- Profile image placeholder -->
+        <div class="profile-frame">
+          <div class="profile-img-wrap">
+            <div class="profile-placeholder" aria-label="Profile photo of Silas Motshegoa">
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+          </div>
+          <!-- Decorative orbit ring -->
+          <div class="orbit" aria-hidden="true">
+            <span class="orbit-dot orbit-dot--1"><i class="fa-brands fa-java"></i></span>
+            <span class="orbit-dot orbit-dot--2"><i class="fa-brands fa-js"></i></span>
+            <span class="orbit-dot orbit-dot--3"><i class="fa-solid fa-database"></i></span>
+            <span class="orbit-dot orbit-dot--4"><i class="fa-brands fa-git-alt"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll nudge -->
+    <a href="#about" class="scroll-nudge" aria-label="Scroll to About section">
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">01 / About</span>
+        <h2 id="about-heading" class="section-title">Who I Am</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-text" data-reveal>
+          <p>
+            I am an <strong>Information Technology graduate</strong> with a deep passion for
+            software development and web technologies. I thrive on turning complex problems into
+            elegant, efficient solutions that make a tangible difference.
+          </p>
+          <p>
+            My background spans <strong>full-stack development</strong>, database design, 
+            object-oriented programming, and Agile methodologies — giving me the versatility 
+            to contribute across the software development lifecycle.
+          </p>
+          <p>
+            I am actively seeking opportunities where I can grow as a developer, collaborate 
+            with talented teams, and ship products that matter.
+          </p>
+
+          <div class="about-badges">
+            <span class="badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> IT Graduate</span>
+            <span class="badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> South Africa</span>
+            <span class="badge"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Open to Work</span>
+          </div>
+        </div>
+
+        <div class="about-card glass" data-reveal>
+          <h3 class="about-card-title">Quick Facts</h3>
+          <ul class="about-facts">
+            <li>
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <span><strong>Focus:</strong> Software &amp; Web Development</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
+              <span><strong>Databases:</strong> MySQL, ERD Modelling</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-arrows-spin" aria-hidden="true"></i>
+              <span><strong>Methodology:</strong> Agile / Scrum</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-flask" aria-hidden="true"></i>
+              <span><strong>Practices:</strong> TDD, OOP, Design Patterns</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>Silasmotshegoa8@gmail.com</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary btn--sm" style="margin-top:1.5rem;">
+            Let's Connect <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section skills" id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">02 / Skills</span>
+        <h2 id="skills-heading" class="section-title">Technical Arsenal</h2>
+      </header>
+
+      <div class="skills-grid">
+
+        <!-- Programming Languages -->
+        <article class="skill-card glass" data-reveal>
+          <div class="skill-card-header">
+            <i class="fa-solid fa-terminal skill-card-icon" aria-hidden="true"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <ul class="skill-list">
+            <li class="skill-item">
+              <div class="skill-meta">
+                <i class="fa-brands fa-java" aria-hidden="true"></i>
+                <span>Java</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-meta">
+                <i class="fa-brands fa-js" aria-hidden="true"></i>
+                <span>JavaScript</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-meta">
+                <i class="fa-brands fa-html5" aria-hidden="true"></i>
+                <span>HTML5</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-meta">
+                <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+                <span>CSS3</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                <div class="skill-fill" data-width="88"></div>
+              </div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-meta">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+                <span>SQL</span>
+                <span class="skill-pct">82%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                <div class="skill-fill" data-width="82"></div>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Databases -->
+        <article class="skill-card glass" data-reveal>
+          <div class="skill-card-header">
+            <i class="fa-solid fa-database skill-card-icon" aria-hidden="true"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="tag-cloud">
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Database Design</span>
+            <span class="tech-tag">ERD Modelling</span>
+            <span class="tech-tag">Normalisation</span>
+            <span class="tech-tag">Relational DBs</span>
+          </div>
+        </article>
+
+        <!-- Tools -->
+        <article class="skill-card glass" data-reveal>
+          <div class="skill-card-header">
+            <i class="fa-solid fa-screwdriver-wrench skill-card-icon" aria-hidden="true"></i>
+            <h3>Tools &amp; IDEs</h3>
+          </div>
+          <div class="tools-grid">
+            <div class="tool-chip">
+              <i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git
+            </div>
+            <div class="tool-chip">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </div>
+            <div class="tool-chip">
+              <i class="fa-solid fa-code" aria-hidden="true"></i> VS Code
+            </div>
+            <div class="tool-chip">
+              <i class="fa-solid fa-laptop-code" aria-hidden="true"></i> IntelliJ
+            </div>
+            <div class="tool-chip">
+              <i class="fa-solid fa-cube" aria-hidden="true"></i> NetBeans
+            </div>
+          </div>
+        </article>
+
+        <!-- Other Skills -->
+        <article class="skill-card glass" data-reveal>
+          <div class="skill-card-header">
+            <i class="fa-solid fa-layer-group skill-card-icon" aria-hidden="true"></i>
+            <h3>Other Skills</h3>
+          </div>
+          <div class="tag-cloud">
+            <span class="tech-tag">OOP</span>
+            <span class="tech-tag">Software Testing</span>
+            <span class="tech-tag">TDD</span>
+            <span class="tech-tag">Networking Fundamentals</span>
+            <span class="tech-tag">Agile Development</span>
+            <span class="tech-tag">Design Patterns</span>
+            <span class="tech-tag">Builder Pattern</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section projects" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">03 / Projects</span>
+        <h2 id="projects-heading" class="section-title">Featured Work</h2>
+      </header>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar" data-reveal role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card glass" data-category="web" data-reveal>
+          <div class="project-img" aria-hidden="true">
+            <div class="project-img-bg project-img-bg--1"></div>
+            <div class="project-overlay">
+              <i class="fa-solid fa-heart-circle-plus project-icon"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Web</span>
+              <span class="p-tag">HTML/CSS/JS</span>
+            </div>
+            <h3 class="project-title">Student Charity Support Program</h3>
+            <p class="project-desc">
+              A web-based platform that assists underprivileged students through
+              donations, meals, and educational support — bridging resource gaps
+              in communities.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Student Charity Support Program on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+              <a href="#" class="project-link" aria-label="View live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass featured-card" data-category="software" data-reveal>
+          <div class="featured-badge" aria-label="Featured project">★ Featured</div>
+          <div class="project-img" aria-hidden="true">
+            <div class="project-img-bg project-img-bg--2"></div>
+            <div class="project-overlay">
+              <i class="fa-solid fa-book-open project-icon"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Software</span>
+              <span class="p-tag">Java</span>
+              <span class="p-tag">TDD</span>
+            </div>
+            <h3 class="project-title">Library Management System</h3>
+            <p class="project-desc">
+              A software system built with rigorous software engineering principles — 
+              applying the Builder Pattern, Test-Driven Development, and OOP best
+              practices for robust, maintainable code.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Library Management System on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+              <a href="#" class="project-link" aria-label="View live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass" data-category="software" data-reveal>
+          <div class="project-img" aria-hidden="true">
+            <div class="project-img-bg project-img-bg--3"></div>
+            <div class="project-overlay">
+              <i class="fa-solid fa-utensils project-icon"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Software</span>
+              <span class="p-tag">Java</span>
+              <span class="p-tag">MySQL</span>
+            </div>
+            <h3 class="project-title">Restaurant Management System</h3>
+            <p class="project-desc">
+              A comprehensive system for managing restaurant operations —  digital
+              ordering, kitchen workflow automation, and business analytics to 
+              streamline daily operations.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Restaurant Management System on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+              <a href="#" class="project-link" aria-label="View live demo">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass" data-category="database" data-reveal>
+          <div class="project-img" aria-hidden="true">
+            <div class="project-img-bg project-img-bg--4"></div>
+            <div class="project-overlay">
+              <i class="fa-solid fa-baby project-icon"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="p-tag">Database</span>
+              <span class="p-tag">MySQL</span>
+              <span class="p-tag">ERD</span>
+            </div>
+            <h3 class="project-title">NannyAtYourService Database</h3>
+            <p class="project-desc">
+              Designed a fully attributed ERD and complete relational database
+              solution for a babysitting agency — covering scheduling, client
+              management, and nanny profiles.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View NannyAtYourService Database on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Source
+              </a>
+              <a href="#" class="project-link" aria-label="View documentation">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Docs
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TIMELINE / JOURNEY ===================== -->
+  <section class="section timeline-section" id="timeline" aria-labelledby="timeline-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">04 / Journey</span>
+        <h2 id="timeline-heading" class="section-title">My Path</h2>
+      </header>
+
+      <ol class="timeline" aria-label="Career and education timeline">
+
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <article class="timeline-card glass">
+            <span class="timeline-date">2022 – 2024</span>
+            <h3 class="timeline-title">Information Technology Degree</h3>
+            <p class="timeline-sub">University · South Africa</p>
+            <p class="timeline-desc">
+              Completed a comprehensive IT programme covering software development,
+              database systems, networking, web technologies, and software engineering
+              principles. Graduated with hands-on project experience across the full stack.
+            </p>
+            <div class="timeline-tags">
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">Agile</span>
+            </div>
+          </article>
+        </li>
+
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <article class="timeline-card glass">
+            <span class="timeline-date">2023</span>
+            <h3 class="timeline-title">Full-Stack Project Development</h3>
+            <p class="timeline-sub">Academic Projects</p>
+            <p class="timeline-desc">
+              Built multiple full-stack applications — including a charity support
+              web platform and a restaurant management system — applying design
+              patterns, TDD, and database design principles throughout.
+            </p>
+            <div class="timeline-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">TDD</span>
+            </div>
+          </article>
+        </li>
+
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker" aria-hidden="true">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <article class="timeline-card glass">
+            <span class="timeline-date">2024</span>
+            <h3 class="timeline-title">Database Design Specialisation</h3>
+            <p class="timeline-sub">Advanced Coursework</p>
+            <p class="timeline-desc">
+              Deep-dived into relational database design — ERD modelling, 
+              normalisation, and SQL optimisation. Delivered the NannyAtYourService
+              database as a capstone database design project.
+            </p>
+            <div class="timeline-tags">
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">ERD</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+          </article>
+        </li>
+
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker timeline-marker--active" aria-hidden="true">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <article class="timeline-card glass timeline-card--active">
+            <span class="timeline-date">2025 – Present</span>
+            <h3 class="timeline-title">Aspiring Software Engineer</h3>
+            <p class="timeline-sub">Seeking First Role · Open to Work</p>
+            <p class="timeline-desc">
+              Actively building my portfolio, sharpening skills in modern web
+              development, and pursuing my first professional software engineering
+              role. Eager to join a team where I can contribute and grow.
+            </p>
+            <div class="timeline-tags">
+              <span class="tech-tag">Open to Work</span>
+              <span class="tech-tag">Full-Stack</span>
+              <span class="tech-tag">Agile Teams</span>
+            </div>
+          </article>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== CERTIFICATIONS ===================== -->
+  <section class="section certs" id="certs" aria-labelledby="certs-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">05 / Certifications</span>
+        <h2 id="certs-heading" class="section-title">Credentials</h2>
+      </header>
+
+      <div class="certs-grid">
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-icon" aria-hidden="true">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Information Technology Degree</h3>
+            <p class="cert-issuer">University · South Africa</p>
+            <span class="cert-badge cert-badge--gold">Completed</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-icon" aria-hidden="true">
+            <i class="fa-brands fa-git-alt"></i>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Version Control with Git</h3>
+            <p class="cert-issuer">Self-Directed Learning</p>
+            <span class="cert-badge cert-badge--blue">Proficient</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass" data-reveal>
+          <div class="cert-icon" aria-hidden="true">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Database Design &amp; SQL</h3>
+            <p class="cert-issuer">Academic Coursework</p>
+            <span class="cert-badge cert-badge--gold">Completed</span>
+          </div>
+        </article>
+
+        <article class="cert-card glass cert-card--cta" data-reveal>
+          <div class="cert-icon" aria-hidden="true">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">More Coming Soon</h3>
+            <p class="cert-issuer">Continuously upskilling</p>
+            <span class="cert-badge cert-badge--outline">In Progress</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <header class="section-header" data-reveal>
+        <span class="section-tag">06 / Contact</span>
+        <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+        <p class="section-sub" data-reveal>
+          I am currently open to new opportunities. Whether you have a question,
+          a project, or just want to say hello — my inbox is always open.
+        </p>
+      </header>
+
+      <div class="contact-grid">
+        <!-- Info cards -->
+        <div class="contact-info" data-reveal>
+          <a href="mailto:Silasmotshegoa8@gmail.com" class="contact-chip glass">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <div>
+              <span class="chip-label">Email</span>
+              <span class="chip-value">Silasmotshegoa8@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+27636615737" class="contact-chip glass">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <div>
+              <span class="chip-label">Phone</span>
+              <span class="chip-value">+27 63 661 5737</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="contact-chip glass">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <div>
+              <span class="chip-label">LinkedIn</span>
+              <span class="chip-value">linkedin.com/in/SilasMotshegoa</span>
+            </div>
+          </a>
+          <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" class="contact-chip glass">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <div>
+              <span class="chip-label">GitHub</span>
+              <span class="chip-value">github.com/SilasMotshegoa</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact form -->
+        <div class="contact-form-wrap glass" data-reveal>
+          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+              <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" required />
+              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Let's work together!" required />
+              <span class="form-error" id="subject-error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+              <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn--full" id="submit-btn">
+              <span id="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message</span>
+              <span id="btn-loading" hidden>
+                <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i> Sending…
+              </span>
+            </button>
+            <p class="form-success" id="form-success" hidden role="status" aria-live="polite">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              Message sent! I'll get back to you soon.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="nav-logo" aria-label="Back to top">
+          <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Building solutions that matter.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/SilasMotshegoa" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/SilasMotshegoa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:Silasmotshegoa8@gmail.com" aria-label="Send email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="tel:+27636615737" aria-label="Call Silas">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Silas Motshegoa. Crafted with precision.</p>
+        <a href="#home" class="footer-back-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top floating button -->
+  <button class="back-top" id="back-top" aria-label="Back to top" hidden>
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
